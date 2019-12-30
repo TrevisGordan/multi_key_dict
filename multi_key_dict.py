@@ -90,6 +90,9 @@ class multi_key_dict(object):
             at_least_one_key_exists = False
             num_of_keys_we_have = 0
 
+            if None in keys:
+                keys = list(filter(None, keys))
+          
             for x in keys:
                 try:
                     self.__getitem__(x)
